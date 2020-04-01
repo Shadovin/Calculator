@@ -1,6 +1,6 @@
 {
     "autoprefixer.browsers": [
-        "last 4 versions",
-        "> 5%"
+        "last 10 versions",
+        "> 20%"
     ],
 }
