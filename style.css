@@ -7,8 +7,7 @@ body {
     overflow-X: hidden;
     background-image: url(img/dark_background.png);
     /* This pattern is downloaded from www.subtlepatterns.com */
-    font-family: Helvetica,
-        Arial,
+    font-family: 'Roboto',
         sans-serif;
 }
 
@@ -202,7 +201,7 @@ body[data-light] {
 .previous-operand[data-light],
 .current-operand[data-light] {
     background-color: white;
-    color: blue;
+    color: black;
 }
 
 .container[data-light] button:hover {
