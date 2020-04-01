@@ -3,6 +3,7 @@ body {
     min-width: 320px;
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     overflow-X: hidden;
     background-image: url(img/dark_background.png);
@@ -21,7 +22,10 @@ body {
 }
 
 .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 80vw;
     height: 90vw;
@@ -30,10 +34,19 @@ body {
 }
 
 .container button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     font-size: 1.1rem;
     padding: 5px;
@@ -42,6 +55,8 @@ body {
     background-color: #111;
     color: white;
     opacity: 0.9;
+    -webkit-transition: 0.3s all linear;
+    -o-transition: 0.3s all linear;
     transition: 0.3s all linear;
     text-decoration: none;
 }
@@ -51,8 +66,14 @@ body {
 }
 
 .result {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-preferred-size: 100%;
     flex-basis: 100%;
 }
 
@@ -63,6 +84,7 @@ body {
 }
 
 button.sumarry {
+    -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
 }
 
@@ -86,7 +108,14 @@ button.sumarry {
 }
 
 .wrap {
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -96,12 +125,16 @@ button.sumarry {
     position: relative;
     display: block;
     cursor: pointer;
+    -ms-flex-preferred-size: 30%;
     flex-basis: 30%;
     height: 7vh;
     font-size: 0.7rem;
     letter-spacing: 5px;
+    -webkit-box-shadow: 3px 3px black;
     box-shadow: 3px 3px black;
     text-shadow: 1px 1px black;
+    -webkit-transition: 1s all ease;
+    -o-transition: 1s all ease;
     transition: 1s all ease;
     text-decoration: none;
     text-transform: uppercase;
@@ -138,9 +171,13 @@ button.sumarry {
     left: 50%;
     height: 100%;
     width: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: -1;
     background-color: #111;
+    -webkit-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
     transition: all 0.6s ease;
 }
 
@@ -167,8 +204,12 @@ button.sumarry {
     left: 50%;
     height: 100%;
     width: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: -1;
+    -webkit-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
     transition: all 0.6s ease;
 }
 
@@ -210,6 +251,7 @@ body[data-light] {
 
 .darkBtn[data-light],
 .lightBtn[data-light] {
+    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
@@ -254,6 +296,7 @@ body[data-light] {
 
     .darkBtn,
     .lightBtn {
+        -ms-flex-preferred-size: 18%;
         flex-basis: 18%;
         font-size: 0.7rem;
         letter-spacing: 5px;
@@ -331,6 +374,9 @@ body[data-light] {
 
     .darkBtn,
     .lightBtn {
+
+        -ms-flex-preferred-size: 20%;
+
         flex-basis: 20%;
         height: 5vh;
     }
@@ -367,6 +413,7 @@ body[data-light] {
 
     .darkBtn,
     .lightBtn {
+        -ms-flex-preferred-size: 13%;
         flex-basis: 13%;
     }
 }
@@ -388,6 +435,7 @@ body[data-light] {
 
     .darkBtn,
     .lightBtn {
+        -ms-flex-preferred-size: 10%;
         flex-basis: 10%;
     }
 }
@@ -415,6 +463,7 @@ body[data-light] {
 
     .darkBtn,
     .lightBtn {
+        -ms-flex-preferred-size: 20%;
         flex-basis: 20%;
         height: 5vh;
         font-size: 1.1rem;
@@ -444,6 +493,7 @@ body[data-light] {
 
     .darkBtn,
     .lightBtn {
+        -ms-flex-preferred-size: 15%;
         flex-basis: 15%;
         height: 5vh;
         font-size: 1.1rem;
