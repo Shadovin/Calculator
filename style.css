@@ -1,0 +1,452 @@
+body {
+    font-size: 10px;
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-X: hidden;
+    background-image: url(img/dark_background.png);
+    /* This pattern is downloaded from www.subtlepatterns.com */
+    font-family: Helvetica,
+        Arial,
+        sans-serif;
+}
+
+.headline {
+    margin-top: 7vh;
+    font-size: 2.4rem;
+    text-shadow: 1px 1px orange;
+    letter-spacing: 6px;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: 90vw;
+    margin: 8vh auto;
+    border: 2px solid orange;
+}
+
+.container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 25%;
+    flex-grow: 1;
+    font-size: 1.1rem;
+    padding: 5px;
+    border: 1px solid orange;
+    text-shadow: 2px 1px black;
+    background-color: #111;
+    color: white;
+    opacity: 0.9;
+    transition: 0.3s all linear;
+    text-decoration: none;
+}
+
+.container button:hover {
+    background-color: orange;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.result,
+.previous-operand,
+.current-operand {
+    background-color: black;
+}
+
+button.sumarry {
+    flex-basis: 50%;
+}
+
+.previous-operand,
+.current-operand {
+    padding-right: 2vw;
+    text-align: right;
+    color: white;
+}
+
+.previous-operand {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.current-operand {
+    height: 5vh;
+    font-size: 1.5rem;
+    line-height: 3rem;
+
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.darkBtn,
+.lightBtn {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    flex-basis: 30%;
+    height: 7vh;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+    box-shadow: 3px 3px black;
+    text-shadow: 1px 1px black;
+    transition: 1s all ease;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.darkBtn {
+    margin-right: 13vw;
+    border: 2px goldenrod solid;
+    color: goldenrod;
+    background-color: #111;
+}
+
+.lightBtn {
+    border: 2px solid #9999FF;
+    color: white;
+    background-color: royalblue;
+}
+
+.lightBtn:hover {
+    color: steelblue;
+}
+
+.darkBtn:hover,
+.lightBtn:hover {
+    background-color: transparent;
+}
+
+.darkBtn::before,
+.lightBtn::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background-color: #111;
+    transition: all 0.6s ease;
+}
+
+.darkBtn::before {
+    background-color: black;
+
+}
+
+.lightBtn::before {
+    background-color: white;
+}
+
+.darkBtn:hover::before,
+.lightBtn:hover::before {
+    width: 100%;
+}
+
+.darkBtn::before,
+.lightBtn::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 0;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+
+
+/* Light version */
+body[data-light] {
+    background-image: url(img/light_background.png);
+    /* This pattern is downloaded from www.subtlepatterns.com */
+}
+
+.headline[data-light] {
+    color: white;
+    text-shadow: 2px 2px blue;
+}
+
+.container[data-light] {
+    border: 2px solid steelblue;
+}
+
+.container[data-light] button {
+    border: 1px solid steelblue;
+    text-shadow: none;
+    background-color: white;
+    color: black;
+    opacity: 0.6;
+    font-weight: bolder;
+}
+
+.result[data-light],
+.previous-operand[data-light],
+.current-operand[data-light] {
+    background-color: white;
+    color: blue;
+}
+
+.container[data-light] button:hover {
+    background-color: darkcyan
+}
+
+.darkBtn[data-light],
+.lightBtn[data-light] {
+    box-shadow: none;
+}
+
+/* Media Queries */
+
+
+
+/* Mobile phones */
+@media(min-width:567px) and (min-height: 320px) {
+    .headline {
+        margin-top: 5vh;
+        font-size: 1.8rem;
+        letter-spacing: 10px;
+    }
+
+    .container {
+        margin-top: -2vh;
+        width: 40vw;
+        height: 34vw;
+    }
+
+    .container button {
+        font-size: 1rem;
+        padding: 5px;
+        color: white;
+    }
+
+    .previous-operand {
+        font-size: 1rem;
+    }
+
+    .current-operand {
+        height: 7vh;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+
+    }
+
+    .wrap {
+        margin-top: -2vh;
+    }
+
+    .darkBtn,
+    .lightBtn {
+        flex-basis: 18%;
+        font-size: 0.7rem;
+        letter-spacing: 5px;
+    }
+
+    .darkBtn {
+        margin-right: 10vw;
+    }
+
+}
+
+@media(min-width:639px) and (min-height: 359px) {
+    .headline {
+        font-size: 2rem;
+    }
+
+    .previous-operand {
+        font-size: 1.2rem;
+    }
+
+    .current-operand {
+        height: 7vh;
+        font-size: 1.5rem;
+        line-height: 2rem;
+
+    }
+
+}
+
+@media(min-width:729px) and (min-height: 410px) {
+    .headline {
+        font-size: 2.2rem;
+
+    }
+
+    .current-operand {
+        height: 7vh;
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+
+    }
+}
+
+/* PC */
+@media(min-width:450px) {
+    .headline {
+        font-size: 2.7rem;
+        letter-spacing: 10px;
+    }
+
+    .current-operand {
+        height: 5vh;
+        font-size: 1.8rem;
+        line-height: 4rem;
+
+    }
+
+    .previous-operand {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        margin-top: 6vh;
+        width: 60vw;
+        height: 50vh;
+    }
+
+    .container button {
+        font-size: 1.5rem;
+    }
+
+    .wrap {
+        margin-top: 12vh;
+    }
+
+    .darkBtn,
+    .lightBtn {
+        flex-basis: 20%;
+        height: 5vh;
+    }
+}
+
+@media(min-width:550px) {
+    .headline {
+        font-size: 3.2rem;
+    }
+
+    .current-operand {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        height: 50vh;
+        width: 50vw;
+    }
+}
+
+@media(min-width:639px) {
+
+    .current-operand {
+        font-size: 2.2rem;
+    }
+
+    .container {
+        height: 60vh;
+    }
+
+    .wrap {
+        margin-top: 2vh;
+    }
+
+    .darkBtn,
+    .lightBtn {
+        flex-basis: 13%;
+    }
+}
+
+@media(min-width:800px) {
+    .container {
+        width: 40vw;
+    }
+}
+
+@media (min-width: 1023px) {
+    .container {
+        width: 30%;
+    }
+
+    .previous-operand {
+        font-size: 1.9rem;
+    }
+
+    .darkBtn,
+    .lightBtn {
+        flex-basis: 10%;
+    }
+}
+
+/* iPad */
+@media(min-width:768px) and (min-height:1023px) {
+    .headline {
+        font-size: 3.2rem;
+    }
+
+    .current-operand {
+        font-size: 2.5rem;
+        line-height: 5rem;
+        height: 1vh;
+    }
+
+    .previous-operand {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        height: 60vh;
+        width: 50vw;
+    }
+
+    .darkBtn,
+    .lightBtn {
+        flex-basis: 20%;
+        height: 5vh;
+        font-size: 1.1rem;
+    }
+}
+
+@media(min-width:1365px) and (min-height:1023px) {
+    .headline {
+        font-size: 3.7rem;
+        letter-spacing: 20px;
+    }
+
+    .previous-operand {
+        font-size: 2.2rem;
+    }
+
+    .current-operand {
+        font-size: 3rem;
+        line-height: 6.5rem;
+        height: 2vh;
+    }
+
+    .container {
+        height: 60vh;
+        width: 40vw;
+    }
+
+    .darkBtn,
+    .lightBtn {
+        flex-basis: 15%;
+        height: 5vh;
+        font-size: 1.1rem;
+    }
+}
